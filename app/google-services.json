@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "887119763062",
+    "project_id": "scribble-space-3d2f5",
+    "storage_bucket": "scribble-space-3d2f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887119763062:android:b8c175a7de8ad29cd27157",
+        "android_client_info": {
+          "package_name": "com.example.scribblespace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpNF_N3AsgziS3TNemZHA1ocPRYjlXnyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
