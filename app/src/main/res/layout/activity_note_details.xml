@@ -15,6 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/page_title"
             android:text="Add New Note"
             android:textSize="32sp"
             android:textColor="@color/white"
@@ -65,5 +66,15 @@
             android:textColor="@color/black"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/delete_note_text_view"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:textSize="18sp"
+        android:textColor="#f00"
+        android:visibility="gone"/>
 
 </RelativeLayout>

@@ -1,6 +1,8 @@
 package com.example.scribblespace;
 
 import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -21,14 +23,26 @@ public class NoteAdapter extends FirestoreRecyclerAdapter<Note, NoteAdapter.Note
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull NoteAdapter.NoteViewHolder holder, int position, @NonNull Note model) {
+    protected void onBindViewHolder(@NonNull NoteAdapter.NoteViewHolder holder, int position, @NonNull Note note) {
+        holder.titleTextView.setText(note.title);
+        holder.contextTextView.setText(note.content);
+        holder.timestampTextView.setText(Utility.timestampToString(note.timestamp));
 
+        holder.itemView.setOnClickListener((v) -> {
+                Intent intent = new Intent(context, NoteDetailsActivity.class);
+                intent.putExtra("title", note.title);
+                intent.putExtra("content", note.content);
+                String docId = this.getSnapshots().getSnapshot(position).getId();
+                intent.putExtra("docId", docId);
+                context.startActivity(intent);
+        });
     }
 
     @NonNull
     @Override
     public NoteAdapter.NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview, parent, false);
+        return new NoteViewHolder(view);
     }
 
     class NoteViewHolder extends RecyclerView.ViewHolder{
